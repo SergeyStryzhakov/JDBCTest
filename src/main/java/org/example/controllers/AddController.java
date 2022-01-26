@@ -22,7 +22,6 @@ public class AddController implements Controller {
         int sal = view.getSalary();
         int deptno = view.getDeptNo();
         dao.addEmployer(id, name, job, mgr, hiredate, sal, deptno);
-        System.out.println("Employer is added successfully");
         Controller controller = new MainController(view, dao);
         controller.start();
     }

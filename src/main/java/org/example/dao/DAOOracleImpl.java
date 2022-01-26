@@ -39,7 +39,7 @@ public class DAOOracleImpl implements DAOInterface {
             Class.forName(driverClass);
             connection = DriverManager.getConnection(connectionUrl, userName, password);
         } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Error...Try again");
         }
     }
 
@@ -77,7 +77,7 @@ public class DAOOracleImpl implements DAOInterface {
             resultSet = preparedStatement.executeQuery();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error...Try again");
         }
 
         disconnect();
@@ -95,7 +95,7 @@ public class DAOOracleImpl implements DAOInterface {
             resultSet = preparedStatement.executeQuery();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error...Try again");
         }
 
         disconnect();
@@ -116,7 +116,7 @@ public class DAOOracleImpl implements DAOInterface {
                 employerList.add(parseEmp(resultSet));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error...Try again");
         }
         disconnect();
         return employerList;
@@ -137,7 +137,7 @@ public class DAOOracleImpl implements DAOInterface {
                 employer = parseEmp(resultSet);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error...Try again");
         }
 
         disconnect();
@@ -159,7 +159,7 @@ public class DAOOracleImpl implements DAOInterface {
             int grade = resultSet.getInt("Grade");
             employer = new Employer(number, name, job, mgr, hiredate, sal, deptno, location, depName, grade);
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error...Try again");
         }
         return employer;
     }
@@ -173,7 +173,7 @@ public class DAOOracleImpl implements DAOInterface {
             resultSet = preparedStatement.executeQuery();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error...Try again");
         }
         disconnect();
 
